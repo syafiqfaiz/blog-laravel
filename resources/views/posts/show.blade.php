@@ -11,6 +11,9 @@
                     <h1>{{$post->title}}</h1>
                     {{$post->body}}
                     @include('posts.delete')
+                    <a href={{route('post_edit', ['id'=>$post->id])}}>
+                        <button class="btn btn-primary">Edit</button>
+                    </a>
                 </div>
             </div>
         </div>
