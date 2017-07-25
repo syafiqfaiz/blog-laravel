@@ -12,8 +12,10 @@
                         'posts.form',
                         array(
                             'action'=> route('post_store'),
-                            'method'=> 'POST'
-                            ))
+                            'method'=> 'POST',
+                            'edit'=> false
+                            )
+                        )
                 </div>
             </div>
         </div>

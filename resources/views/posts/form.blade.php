@@ -1,5 +1,10 @@
 <form action={{$action}} method={{$method}}>
     {{csrf_field()}}
+    @if($edit == true)
+        {{ method_field('PATCH') }}
+        <input type="hidden" name="id" value={{$post->id}}>
+    @endif
+
     <div class="form-group">
         <label for="title">Title</label>
         <input class="form-control" type="text" name="title" value={{$post->title}}>

@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     <h1>{{$post->title}}</h1>
                     {{$post->body}}
+                    @include('posts.delete')
                 </div>
             </div>
         </div>
