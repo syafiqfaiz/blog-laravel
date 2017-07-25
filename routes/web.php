@@ -18,10 +18,15 @@ Route::get('/', 'PostsController@index')->name('post_index');
 
 // post
 Route::get('/posts', 'PostsController@index')->name('post_index');
-Route::get('/posts/create', 'PostsController@create')->name('post_create');
 Route::get('/post/{id}', 'PostsController@show')->name('post_show');
-Route::post('/posts', 'PostsController@store')->name('post_store');
-Route::get('/post/{id}/edit', 'PostsController@edit')->name('post_edit');
-Route::patch('/post/{id}', 'PostsController@update')->name('post_update');
-Route::delete('/post/{id}', 'PostsController@destroy')->name('post_destroy');
 
+// Admin dashboard
+Route::namespace('Admin')->group(function () {
+    Route::get('/admin/posts', 'PostsController@index')->name('admin_post_index');
+    Route::get('/admin/posts/create', 'PostsController@create')->name('admin_post_create');
+    Route::get('/admin/post/{id}', 'PostsController@show')->name('admin_post_show');
+    Route::post('/admin/posts', 'PostsController@store')->name('admin_post_store');
+    Route::get('/admin/post/{id}/edit', 'PostsController@edit')->name('admin_post_edit');
+    Route::patch('/admin/post/{id}', 'PostsController@update')->name('admin_post_update');
+    Route::delete('/admin/post/{id}', 'PostsController@destroy')->name('admin_post_destroy');
+});

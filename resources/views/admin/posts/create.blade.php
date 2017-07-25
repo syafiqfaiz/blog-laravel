@@ -5,15 +5,15 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit post</div>
+                <div class="panel-heading">New post</div>
                 
                 <div class="panel-body">
                     @include(
-                        'posts.form',
+                        'admin.posts.form',
                         array(
-                            'action'=> route('post_update', ['id'=> $post->id]),
+                            'action'=> route('admin_post_store'),
                             'method'=> 'POST',
-                            'edit'=> true
+                            'edit'=> false
                             )
                         )
                 </div>

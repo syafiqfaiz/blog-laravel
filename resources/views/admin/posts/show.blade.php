@@ -10,6 +10,10 @@
                 <div class="panel-body">
                     <h1>{{$post->title}}</h1>
                     {{$post->body}}
+                    @include('admin.posts.delete')
+                    <a href={{route('admin_post_edit', ['id'=>$post->id])}}>
+                        <button class="btn btn-primary">Edit</button>
+                    </a>
                 </div>
             </div>
         </div>

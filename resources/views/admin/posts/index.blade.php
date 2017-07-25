@@ -7,10 +7,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Blog</div>
                 
-                <div class="panel-body">
-                    <h1>{{$post->title}}</h1>
-                    {{$post->body}}
-                </div>
+                @foreach($posts as $post)
+                    @include('admin.posts.post_card')
+                @endforeach
             </div>
         </div>
     </div>

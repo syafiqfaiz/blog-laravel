@@ -8,9 +8,7 @@
                 <div class="panel-heading">Blog</div>
                 
                 @foreach($posts as $post)
-                    <div class="panel-body">
-                        {{$post->body}}
-                    </div>
+                    @include('posts.post_card')
                 @endforeach
             </div>
         </div>
